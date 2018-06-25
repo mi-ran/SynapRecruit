@@ -78,10 +78,16 @@ def printText(textMatrix, rotateAncle, width, height):
 
 if __name__ == '__main__':
     rotateAncle = 0
+    input_text = " ".join(sys.argv[1:])
+
+    for c in input_text:
+        if (c < 'A' and c is not " ") or (c > 'Z'):
+            print("wrong input")
+            sys.exit(0)
+
     # read font map file
     readFile()
     # get input text
-    input_text = " ".join(sys.argv[1:])
     # string을 편집하기 쉬운 모양의 행렬로 바꿈
     textMatrix = str2Matrix(input_text)
     # print
