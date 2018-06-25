@@ -68,7 +68,10 @@ def printText(textMatrix, rotateAncle, width, height):
         textMatrix = rotate90(textMatrix)
 
     for r in range(len(textMatrix)):
-        printRow(textMatrix[r], width, height)
+        if (rotateAncle//90)%2 is 1:
+            printRow(textMatrix[r], height, width)
+        else:
+            printRow(textMatrix[r], width, height)
         print()
     print()
 
@@ -84,6 +87,6 @@ if __name__ == '__main__':
     # print
     printText(textMatrix, rotateAncle, 2, 1);
     # lotate
-    rotateAncle = 360
+    rotateAncle = 90
     #print
     printText(textMatrix, rotateAncle, 1, 2);
